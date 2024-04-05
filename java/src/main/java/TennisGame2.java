@@ -25,31 +25,19 @@ public class TennisGame2 implements TennisGame {
         }
 
         if (P1point > 0 && P2point == 0) {
-            P1res = getTennisScore(P1point);
-            P2res = getTennisScore(P2point);
-
-            score = P1res + "-" + P2res;
+            score = getScoreHeader();
         }
 
         if (P2point > 0 && P1point == 0) {
-            P1res = getTennisScore(P1point);
-            P2res = getTennisScore(P2point);
-
-            score = P1res + "-" + P2res;
+            score = getScoreHeader();
         }
 
         if (P1point > P2point && P1point < 4) {
-            P1res = getTennisScore(P1point);
-            P2res = getTennisScore(P2point);
-
-            score = P1res + "-" + P2res;
+            score = getScoreHeader();
         }
 
         if (P2point > P1point && P2point < 4) {
-            P1res = getTennisScore(P1point);
-            P2res = getTennisScore(P2point);
-
-            score = P1res + "-" + P2res;
+            score = getScoreHeader();
         }
 
         if (P1point > P2point && P2point >= 3) {
@@ -69,6 +57,13 @@ public class TennisGame2 implements TennisGame {
         }
 
         return score;
+    }
+
+    private String getScoreHeader() {
+        P1res = getTennisScore(P1point);
+        P2res = getTennisScore(P2point);
+
+        return P1res + "-" + P2res;
     }
 
     public void SetP1Score(int number) {
