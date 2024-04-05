@@ -13,16 +13,14 @@ public class TennisGame2 implements TennisGame {
     }
 
     public String getScore() {
+        if (P1point == P2point) {
+            if (P1point >= 3) {
+                return "Deuce";
+            }
+            return getTennisScore(P1point) + "-All";
+        }
+
         String score = "";
-
-        if (P1point == P2point && P1point < 4) {
-            score = getTennisScore(P1point);
-            score += "-All";
-        }
-
-        if (P1point == P2point && P1point >= 3) {
-            score = "Deuce";
-        }
 
         if (P1point > 0 && P2point == 0) {
             score = getScoreHeader();
